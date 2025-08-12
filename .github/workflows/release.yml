@@ -83,4 +83,4 @@ jobs:
             - Windows: 可执行文件 (`.exe`)
           releaseDraft: true
           prerelease: false
-          args: --bundles nsis --verbose
+          args: --verbose
