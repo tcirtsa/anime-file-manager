@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tauri API Test</title>
+</head>
+<body>
+    <h1>Tauri API 测试</h1>
+    <button id="testInvoke">测试 invoke</button>
+    <button id="testDialog">测试 dialog</button>
+    <div id="result"></div>
+
+    <script type="module">
+        const resultDiv = document.getElementById('result');
+        
+        // 测试 invoke
+        document.getElementById('testInvoke').addEventListener('click', async () => {
+            try {
+                console.log('Testing invoke...');
+                resultDiv.innerHTML = 'Testing invoke...';
+                
+                // 动态导入 Tauri API
+                const { invoke } = await import('@tauri-apps/api/core');
+                console.log('invoke imported:', typeof invoke);
+                
+                const result = await invoke('load_config');
+                console.log('invoke result:', result);
+                resultDiv.innerHTML = `Invoke success: ${JSON.stringify(result)}`;
+            } catch (error) {
+                console.error('Invoke error:', error);
+                resultDiv.innerHTML = `Invoke error: ${error}`;
+            }
+        });
+        
+        // 测试 dialog
+        document.getElementById('testDialog').addEventListener('click', async () => {
+            try {
+                console.log('Testing dialog...');
+                resultDiv.innerHTML = 'Testing dialog...';
+                
+                // 动态导入 dialog API
+                const { open } = await import('@tauri-apps/plugin-dialog');
+                console.log('open imported:', typeof open);
+                
+                const result = await open({
+                    directory: true,
+                    multiple: false,
+                });
+                console.log('dialog result:', result);
+                resultDiv.innerHTML = `Dialog success: ${result}`;
+            } catch (error) {
+                console.error('Dialog error:', error);
+                resultDiv.innerHTML = `Dialog error: ${error}`;
+            }
+        });
+    </script>
+</body>
+</html>

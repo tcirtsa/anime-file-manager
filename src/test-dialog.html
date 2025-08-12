@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog Test</title>
+</head>
+<body>
+    <h1>Dialog Plugin Test</h1>
+    <button id="testDialog">Test Dialog</button>
+    <div id="result"></div>
+
+    <script type="module">
+        import { open } from '@tauri-apps/plugin-dialog';
+        
+        document.getElementById('testDialog').addEventListener('click', async () => {
+            try {
+                console.log('Testing dialog...');
+                const result = await open({
+                    directory: true,
+                    multiple: false,
+                });
+                document.getElementById('result').innerHTML = `Selected: ${result}`;
+                console.log('Dialog result:', result);
+            } catch (error) {
+                console.error('Dialog error:', error);
+                document.getElementById('result').innerHTML = `Error: ${error}`;
+            }
+        });
+    </script>
+</body>
+</html>
