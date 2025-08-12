@@ -1,5 +1,3 @@
-import React from 'react';
-
 function TestPage() {
   const handleClick = () => {
     console.log('Button clicked!');
