@@ -62,13 +62,17 @@ jobs:
           }
 
       - name: 构建Tauri应用
-        uses: tauri-apps/tauri-action@v0
+        run: pnpm tauri build --verbose
+
+      - name: 创建Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: ${{ github.ref_name }}
-          releaseName: '动漫文件管理器 ${{ github.ref_name }}'
-          releaseBody: |
+          tag_name: ${{ github.ref_name }}
+          release_name: '动漫文件管理器 ${{ github.ref_name }}'
+          body: |
             ## 动漫文件管理器 ${{ github.ref_name }}
             
             ### 功能
@@ -80,7 +84,16 @@ jobs:
             - 日志系统
             
             ### 下载
-            - Windows: 可执行文件 (`.exe`)
-          releaseDraft: true
+            - Windows: 绿色版可执行文件 (`.exe`)
+          draft: true
           prerelease: false
-          args: --verbose
+
+      - name: 上传绿色版exe
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: src-tauri/target/release/anime-file-manager.exe
+          asset_name: anime-file-manager-${{ github.ref_name }}-windows-portable.exe
+          asset_content_type: application/octet-stream
