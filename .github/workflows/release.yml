@@ -50,6 +50,14 @@ jobs:
       - name: 安装前端依赖
         run: pnpm install
 
+      - name: 检查图标文件
+        run: |
+          Get-ChildItem src-tauri/icons/
+          if (!(Test-Path "src-tauri/icons/icon.ico")) { 
+            Write-Error "icon.ico not found" 
+            exit 1 
+          }
+
       - name: 构建Tauri应用
         uses: tauri-apps/tauri-action@v0
         env:
