@@ -49,7 +49,7 @@
 
 1. 安装Rust和Node.js
 2. 安装Tauri CLI: `cargo install tauri-cli`
-3. 克隆仓库: `git clone https://github.com/yourusername/anime-file-manager.git`
+3. 克隆仓库: `git clone https://github.com/tcirtsa/anime-file-manager.git`
 4. 安装依赖: `cd anime-file-manager && npm install`
 5. 运行开发服务器: `cargo tauri dev`
 
