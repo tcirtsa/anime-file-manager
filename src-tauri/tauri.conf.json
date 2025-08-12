@@ -1,5 +1,5 @@
 {
-  "$schema": "https://tauri.app/v2/config-schema.json",
+  "$schema": "https://schema.tauri.app/config/2.0.0",
   "productName": "anime-file-manager",
   "version": "0.1.0",
   "identifier": "com.tcirtsa.anime-file-manager",
