@@ -22,10 +22,6 @@
 
 ## 安装与使用
 
-### 系统要求
-
-- Windows
-
 ### 安装步骤
 
 1. 从[Releases](https://github.com/yourusername/anime-file-manager/releases)页面下载适合您系统的安装包
