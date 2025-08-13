@@ -24,7 +24,7 @@
 
 ### 安装步骤
 
-1. 从[Releases](https://github.com/yourusername/anime-file-manager/releases)页面下载适合您系统的安装包
+1. 从[Releases](https://github.com/tcirtsa/anime-file-manager/releases)页面下载适合您系统的安装包
 2. 安装应用程序
 3. 启动"动漫文件管理器"
 
