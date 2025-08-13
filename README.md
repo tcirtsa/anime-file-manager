@@ -24,9 +24,7 @@
 
 ### 系统要求
 
-- Windows 10/11
-- macOS 10.15+
-- Linux (主流发行版)
+- Windows
 
 ### 安装步骤
 
