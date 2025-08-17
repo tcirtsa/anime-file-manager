@@ -1,4 +1,4 @@
-# 动漫文件管理器 (Anime Scraper)
+# 动漫刮削器 (Anime Scraper)
 
 一个基于Tauri的跨平台动漫文件管理工具，帮助您整理和管理动漫视频文件。
 
@@ -26,7 +26,7 @@
 
 1. 从[Releases](https://github.com/tcirtsa/anime-file-manager/releases)页面下载适合您系统的安装包
 2. 安装应用程序
-3. 启动"动漫文件管理器"
+3. 启动"动漫刮削器"
 
 ### 基本使用流程
 
