@@ -1,4 +1,4 @@
-# 动漫文件管理器 (Anime File Manager)
+# 动漫文件管理器 (Anime Scraper)
 
 一个基于Tauri的跨平台动漫文件管理工具，帮助您整理和管理动漫视频文件。
 
